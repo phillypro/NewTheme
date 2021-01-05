@@ -34,6 +34,8 @@
   {%- assign overlay_header = true -%}
 {% endif %}
 
+
+
 {% style %}
   .site-nav__link,
   .site-nav__dropdown-link:not(.site-nav__dropdown-link--top-level) {
@@ -49,15 +51,11 @@
 {% endstyle %}
 
 <div data-section-id="{{ section.id }}" data-section-type="header-section">
-  {% if overlay_header %}
+  {% if overlay_header or section.settings.above_announcement %}
     {% include 'announcement-bar' %}
   {% endif %}
 
-  {% unless overlay_header %}
-    {% if section.settings.toolbar_currencies or section.settings.toolbar_social or section.settings.toolbar_menu != blank %}
-      {% include 'toolbar', overlay_header: overlay_header  %}
-    {% endif %}
-  {% endunless %}
+
 
   <div class="header-sticky-wrapper">
     <div class="header-wrapper{% if overlay_header %} header-wrapper--sticky is-light{% endif %}">
@@ -129,6 +127,9 @@
             <div class="header-item header-item--icons">
               {% include 'header-icons' %}
             </div>
+            
+
+            
           </div>
 
           {% if section.settings.main_menu_alignment == 'center' %}
@@ -161,7 +162,7 @@
     </div>
   </div>
 
-  {% unless overlay_header %}
+  {% unless overlay_header or section.settings.above_announcement %}
     {% include 'announcement-bar' %}
   {% endunless %}
 </div>
@@ -237,6 +238,12 @@
         "id": "sticky_index",
         "label": "Overlay header over home page",
         "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "above_announcement",
+        "label": "Place Announcements at top of header",
+        "default": true
       },
       {
         "type": "checkbox",
