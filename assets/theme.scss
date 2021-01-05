@@ -314,55 +314,55 @@ $grid-breakpoints: (
 
 // Button colors
 
-$colorBtnPrimary: #111111;
+$colorBtnPrimary: {{ settings.color_button | default: '#000' }};
 
-$colorBtnPrimaryText: #fff;
+$colorBtnPrimaryText: {{ settings.color_button_text | default: '#fff' }};
 
-$colorCartDot: #000000;
+$colorCartDot: {{ settings.color_cart_dot | default: '#ff4f33' }};
 
 // Text link colors
 
-$colorLink: #000000;
+$colorLink: {{ settings.color_body_text | default: '#1c1d1d' }};
 
 // Text colors
 
-$colorTextBody: #000000;
+$colorTextBody: {{ settings.color_body_text | default: '#1c1d1d' }};
 
-$colorPrice: #1c1d1d;
+$colorPrice: {{ settings.color_price | default: '#1c1d1d' }};
 
-$colorTextSavings: #000000;
+$colorTextSavings: {{ settings.color_savings_text | default: '#1c1d1d' }};
 
 // Backgrounds
 
-$colorBody: #ffffff;
+$colorBody: {{ settings.color_body_bg | default: '#fff' }};
 
-$colorInputBg: #ffffff;
+$colorInputBg: {{ settings.color_body_bg | default: '#1c1d1d' }};
 
 // Footer
 
-$colorFooter: #000000;
+$colorFooter: {{ settings.color_footer | default: '#111' }};
 
-$colorFooterText: #ffffff;
+$colorFooterText: {{ settings.color_footer_text | default: '#fff' }};
 
 // Border colors
 
-$colorBorder: #e8e8e1;
+$colorBorder: {{ settings.color_borders | default: '#1c1d1d' }};
 
 // Nav and dropdown link background
 
-$colorNav: #ffffff;
+$colorNav: {{ settings.color_header | default: '#fff' }};
 
-$colorNavText: #000000;
+$colorNavText: {{ settings.color_header_text | default: '#000' }};
 
-$colorAnnouncement: #000000;
+$colorAnnouncement: {{ settings.color_announcement | default: '#1c1d1d' }};
 
-$colorAnnouncementText: #ffffff;
+$colorAnnouncementText: {{ settings.color_announcement_text | default: '#fff' }};
 
 $colorStickyNavLinks: #fff;
 
 // Hero text color
 
-$colorHeroText: #fff;
+$colorHeroText: {{ settings.color_image_text | default: '#fff' }};
 
 // Helper colors
 
@@ -398,29 +398,29 @@ $slideshow-text-dark: #000;
 
 // Modal
 
-$colorModalBg: #e6e6e6;
+$colorModalBg: {{ settings.color_modal_overlays | default: '#000' }};
 
 $colorModalText: #fff;
 
 // Image overlays
 
-$colorImageOverlay: #000;
+$colorImageOverlay: {{ settings.color_image_overlay | default: '#000' }};
 
-$colorImageOverlayOpacity: 0.1;
+$colorImageOverlayOpacity: {{ settings.color_image_overlay_opacity | divided_by: 100.0 }};
 
-$colorImageOverlayTextShadow: 0.2;
+$colorImageOverlayTextShadow: {{ settings.color_image_overlay_text_shadow | divided_by: 100.0 }};
 
-$colorSmallImageBg: #fff;
+$colorSmallImageBg: {{ settings.color_small_image_bg | default: '#eee' }};
 
-$colorLargeImageBg: #0f0f0f;
+$colorLargeImageBg: {{ settings.color_large_image_bg | default: '#1c1d1d' }};
 
-$colorGridOverlay: #000000;
+$colorGridOverlay: {{ settings.collection_grid_tint | default: '#000' }};
 
-$colorGridOverlayOpacity: 0.1;
+$colorGridOverlayOpacity: {{ settings.collection_grid_opacity | divided_by: 100.0 }};
 
 // Button style
 
-$buttonStyle: round-slight;
+$buttonStyle: {{ settings.button_style | default: 'square' }};
 
 $buttonSkew: 12;
 
@@ -436,7 +436,7 @@ $colorSwatchCollectionSizeLarge: 19px;
 
 $colorSwatchSidebarSize: 35px;
 
-$swatchStyle: round;
+$swatchStyle: {{ settings.swatch_style | default: 'square' }};
 
 $siteNavItemPadding: 15px;
 
@@ -466,49 +466,49 @@ $z-index-loader: 4;
 
 // Font-face header styles
 
-$type_header_family: "Trade Gothic Next";
+$type_header_family: {{ settings.type_header_font_family.family }};
 
-$type_header_fallback: sans-serif;
+$type_header_fallback: {{ settings.type_header_font_family.fallback_families }};
 
 $type_header_stack: #{"'" + $type_header_family + "', " + $type_header_fallback};
 
-$type_header_weight: 400;
+$type_header_weight: {{ settings.type_header_font_family.weight }};
 
 // Non font-face header styles
 
-$type_header_line_height: 1;
+$type_header_line_height: {{ settings.type_header_line_height | default: 1.4 }};
 
-$type_header_text_center: true;
+$type_header_text_center: {{ settings.type_headers_align_text | default: false }};
 
-$type_header_base_size: 40px;
+$type_header_base_size: {{ settings.type_header_base_size | default: 32 }}px;
 
-$type_header_spacing: 0.0em;
+$type_header_spacing: {{ settings.type_header_spacing | default: "25" | divided_by: 1000.00 }}em;
 
-$type_header_capitalize: false;
+$type_header_capitalize: {{ settings.type_header_capitalize | default: false }};
 
 // Font-face base styles
 
-$type_base_family: "Trade Gothic";
+$type_base_family: {{ settings.type_base_font_family.family }};
 
-$type_base_fallback: sans-serif;
+$type_base_fallback: {{ settings.type_base_font_family.fallback_families }};
 
 $type_base_stack: #{"'" + $type_base_family + "', " + $type_base_fallback};
 
-$type_base_weight: 700;
+$type_base_weight: {{ settings.type_base_font_family.weight }};
 
 // Non font-face base styles
 
-$type_body_text_center: true;
+$type_body_text_center: {{ settings.type_body_align_text | default: false }};
 
-$type_base_spacing: 0.025em;
+$type_base_spacing: {{ settings.type_base_spacing | default: "50" | divided_by: 1000.00 }}em;
 
-$type_base_line_height: 1.6;
+$type_base_line_height: {{ settings.type_base_line_height | default: 1.4 }};
 
-$type_base_size: 17px;
+$type_base_size: {{ settings.type_base_size | default: 16 }}px;
 
-$icon_weight: 3px;
+$icon_weight: {{ settings.icon_weight | default: '5px' }};
 
-$icon_linecaps: miter;
+$icon_linecaps: {{ settings.icon_linecaps | default: 'miter' }};
 
 /*============================================================================
   Animations
@@ -565,15 +565,15 @@ $drawerCartFooterHeight: 130px;
 
 // default, overwritten by JS
 
-$colorDrawers: #ffffff;
+$colorDrawers: {{ settings.color_drawer_background | default: '#1c1d1d' }};
 
-$colorDrawerBorder: #e8e8e1;
+$colorDrawerBorder: {{ settings.color_drawer_border | default: '#343535' }};
 
-$colorDrawerText: #000000;
+$colorDrawerText: {{ settings.color_drawer_text | default: '#fff' }};
 
-$colorDrawerButton: #111111;
+$colorDrawerButton: {{ settings.color_drawer_button | default: '#a26b25' }};
 
-$colorDrawerButtonText: #ffffff;
+$colorDrawerButtonText: {{ settings.color_drawer_button_text | default: '#fff' }};
 
 $fixedHeightLimit: 600px;
 
@@ -2430,7 +2430,7 @@ select {
           appearance: none;
   background-position: right center;
   background: {
-    image: url(//cdn.shopify.com/s/files/1/0026/1829/4325/t/47/assets/ico-select.svg);
+    image: url({{ "ico-select.svg" | asset_url | split: '?' | first }});
     repeat: no-repeat;
     position: right 10px center;
     color: transparent;
@@ -5294,6 +5294,10 @@ $color-blankstate-background: #e1e1e1;
 }
 
 .toolbar {
+  display:inline-block;
+      padding-left: 12px;
+    padding-right: 12px;
+      vertical-align: middle;
   background: $colorNav;
   color: $colorNavText;
   @include baseSmallFontStack;
@@ -6484,13 +6488,13 @@ $color-blankstate-background: #e1e1e1;
   background-color: transparent;
   border: none;
   width: auto;
-  background-image: url(//cdn.shopify.com/s/files/1/0026/1829/4325/t/47/assets/ico-select.svg);
+  background-image: url({{ "ico-select.svg" | asset_url | split: '?' | first }});
   background-size: 12px;
   font-style: normal;
 
   .toolbar__item & {
     color: $colorNavText;
-    background-image: url(//cdn.shopify.com/s/files/1/0026/1829/4325/t/47/assets/ico-select-menu.svg);
+    background-image: url({{ "ico-select-menu.svg" | asset_url | split: '?' | first }});
 
     @include media-query($medium-up) {
       @include baseSmallFontStack;
@@ -6499,7 +6503,7 @@ $color-blankstate-background: #e1e1e1;
 
   .is-light & {
     color: $colorStickyNavLinks;
-    background-image: url(//cdn.shopify.com/s/files/1/0026/1829/4325/t/47/assets/ico-select-white.svg);
+    background-image: url({{ "ico-select-white.svg" | asset_url | split: '?' | first }});
   }
 
   &:hover,
@@ -6509,18 +6513,18 @@ $color-blankstate-background: #e1e1e1;
 
   .header-item & {
     color: $colorNavText;
-    background-image: url(//cdn.shopify.com/s/files/1/0026/1829/4325/t/47/assets/ico-select-menu.svg);
+    background-image: url({{ "ico-select-menu.svg" | asset_url | split: '?' | first }});
   }
 
   .is-light .header-item & {
     color: $colorStickyNavLinks;
-    background-image: url(//cdn.shopify.com/s/files/1/0026/1829/4325/t/47/assets/ico-select-white.svg);
+    background-image: url({{ "ico-select-white.svg" | asset_url | split: '?' | first }});
   }
 
   .currency-picker--drawer & {
     padding-top: 5px;
     padding-bottom: 5px;
-    background-image: url(//cdn.shopify.com/s/files/1/0026/1829/4325/t/47/assets/ico-select-drawer.svg);
+    background-image: url({{ "ico-select-drawer.svg" | asset_url | split: '?' | first }});
     border: 1px solid $colorDrawerBorder;
   }
 }
@@ -9071,7 +9075,7 @@ $collectionHeroSmall: 250px;
 
 .grid--collection.unload {
   min-height: 180px;
-  background: transparent url(//cdn.shopify.com/s/files/1/0026/1829/4325/t/47/assets/ajax-loader.gif) center 150px no-repeat;
+  background: transparent url({{ "ajax-loader.gif" | asset_url | split: '?' | first }}) center 150px no-repeat;
 
   .grid__item {
     opacity: 0;
