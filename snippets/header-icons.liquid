@@ -17,6 +17,7 @@
       </a>
     {% endif %}
 
+    
     {% if section.settings.header_search_enable %}
       <a href="/search" class="site-nav__link site-nav__link--icon js-search-header js-no-transition{% if section.settings.main_menu_alignment == 'center' or section.settings.main_menu_alignment == 'center-split' %} medium-up--hide{% endif %}">
         {% include 'icon-search' %}
@@ -41,5 +42,13 @@
         <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}"></span>
       </span>
     </a>
+    
+  {% unless overlay_header %}
+    {% if section.settings.toolbar_currencies or section.settings.toolbar_social or section.settings.toolbar_menu != blank %}
+      {% include 'toolbar', overlay_header: overlay_header  %}
+    {% endif %}
+  {% endunless %}
+    
+    
   </div>
 </div>
