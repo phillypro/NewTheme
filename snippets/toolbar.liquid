@@ -1,5 +1,5 @@
 <div class="toolbar{% if overlay_header%} toolbar--transparent{% endif %} small--hide">
-  <div class="page-width">
+
     <div class="toolbar__content">
       {% if section.settings.toolbar_menu != blank %}
         <div class="toolbar__item toolbar__item--menu">
@@ -12,7 +12,8 @@
           </ul>
         </div>
       {% endif %}
-
+      
+      {% comment %}
       {% if section.settings.toolbar_social %}
         <div class="toolbar__item">
           <ul class="inline-list toolbar__social">
@@ -91,6 +92,7 @@
           </ul>
         </div>
       {% endif %}
+      {% endcomment %}
 
       {% if settings.enable_currencies and section.settings.toolbar_currencies %}
         <div class="toolbar__item">
@@ -99,5 +101,5 @@
       {% endif %}
     </div>
 
-  </div>
+
 </div>
